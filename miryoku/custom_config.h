@@ -1,6 +1,5 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
-
 #define MIRYOKU_ALPHAS_QWERTY
 #define MIRYOKU_TAP_QWERTY
 #define MIRYOKU_EXTRA_COLEMAKDH
@@ -10,38 +9,38 @@
     combos {
         compatible = "zmk,combos";
         
-        // AltGr + русские буквы (позиции для 36-клавишной Chocofi)
-        combo_altgr_kh {
+        // Ctrl + русские буквы для Mac (при MIRYOKU_CLIPBOARD_MAC Ctrl на позиции 10)
+        combo_ctrl_kh {
             bindings = <&kp J>;              // х в русской раскладке
-            key-positions = <33 3>;          // правый AltGr + p
+            key-positions = <10 9>;          // LCTRL (Q при MAC) + p
             timeout-ms = <50>;
             layers = <0>;
         };
         
-        combo_altgr_hard {
+        combo_ctrl_hard {
             bindings = <&kp RBKT>;           // ъ в русской раскладке  
-            key-positions = <33 15>;         // правый AltGr + m
+            key-positions = <10 24>;         // LCTRL (Q при MAC) + m
             timeout-ms = <50>;
             layers = <0>;
         };
         
-        combo_altgr_shch {
+        combo_ctrl_shch {
             bindings = <&kp O>;              // щ в русской раскладке
-            key-positions = <33 18>;         // правый AltGr + i
+            key-positions = <10 8>;          // LCTRL (Q при MAC) + i
             timeout-ms = <50>;
             layers = <0>;
         };
         
-        combo_altgr_yo {
+        combo_ctrl_yo {
             bindings = <&kp GRAVE>;          // ё в русской раскладке
-            key-positions = <31 13>;         // левый AltGr + t
+            key-positions = <10 13>;         // LCTRL (Q при MAC) + t
             timeout-ms = <50>;
             layers = <0>;
         };
         
-        combo_altgr_e {
+        combo_ctrl_e {
             bindings = <&kp SQT>;            // э в русской раскладке
-            key-positions = <33 5>;          // правый AltGr + j
+            key-positions = <10 23>;         // LCTRL (Q при MAC) + j
             timeout-ms = <50>;
             layers = <0>;
         };

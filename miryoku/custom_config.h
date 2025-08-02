@@ -9,38 +9,74 @@
     combos {
         compatible = "zmk,combos";
         
-        // Ctrl + русские буквы для Mac (при MIRYOKU_CLIPBOARD_MAC Ctrl на позиции 10)
-        combo_ctrl_kh {
+        // ЛЕВЫЙ Ctrl + русские буквы (позиция 10 при MAC)
+        combo_lctrl_kh {
             bindings = <&kp J>;              // х в русской раскладке
-            key-positions = <10 9>;          // LCTRL (Q при MAC) + p
+            key-positions = <10 9>;          // LCTRL + p
             timeout-ms = <50>;
             layers = <0>;
         };
         
-        combo_ctrl_hard {
+        combo_lctrl_hard {
             bindings = <&kp RBKT>;           // ъ в русской раскладке  
-            key-positions = <10 24>;         // LCTRL (Q при MAC) + m
+            key-positions = <10 24>;         // LCTRL + m
             timeout-ms = <50>;
             layers = <0>;
         };
         
-        combo_ctrl_shch {
+        combo_lctrl_shch {
             bindings = <&kp O>;              // щ в русской раскладке
-            key-positions = <10 8>;          // LCTRL (Q при MAC) + i
+            key-positions = <10 8>;          // LCTRL + i
             timeout-ms = <50>;
             layers = <0>;
         };
         
-        combo_ctrl_yo {
+        combo_lctrl_yo {
             bindings = <&kp GRAVE>;          // ё в русской раскладке
-            key-positions = <10 13>;         // LCTRL (Q при MAC) + t
+            key-positions = <10 13>;         // LCTRL + t
             timeout-ms = <50>;
             layers = <0>;
         };
         
-        combo_ctrl_e {
+        combo_lctrl_e {
             bindings = <&kp SQT>;            // э в русской раскладке
-            key-positions = <10 23>;         // LCTRL (Q при MAC) + j
+            key-positions = <10 23>;         // LCTRL + j
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        // ПРАВЫЙ Ctrl + русские буквы (позиция 18 при MAC)
+        combo_rctrl_kh {
+            bindings = <&kp J>;              // х в русской раскладке
+            key-positions = <18 9>;          // RCTRL + p
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+        
+        combo_rctrl_hard {
+            bindings = <&kp RBKT>;           // ъ в русской раскладке  
+            key-positions = <18 24>;         // RCTRL + m
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+        
+        combo_rctrl_shch {
+            bindings = <&kp O>;              // щ в русской раскладке
+            key-positions = <18 8>;          // RCTRL + i
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+        
+        combo_rctrl_yo {
+            bindings = <&kp GRAVE>;          // ё в русской раскладке
+            key-positions = <18 13>;         // RCTRL + t
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+        
+        combo_rctrl_e {
+            bindings = <&kp SQT>;            // э в русской раскладке
+            key-positions = <18 23>;         // RCTRL + j
             timeout-ms = <50>;
             layers = <0>;
         };

@@ -6,72 +6,42 @@
 #include "../miryoku/miryoku.dtsi"
 
 / {
-    behaviors {
-        // LALT + P → х
-        altgr_p: altgr_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp P>, <&kp J>;  // P обычно, J (х) с Alt
-            mods = <(MOD_LALT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;  // сохраняем Shift если нажат
+    combos {
+        compatible = "zmk,combos";
+        
+        // P + M = х (зажми одновременно)
+        combo_ha {
+            timeout-ms = <30>;
+            key-positions = <9 34>;  // P и M
+            bindings = <&kp GRAVE>;
         };
         
-        // LALT + M → ъ
-        altgr_m: altgr_m {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp M>, <&kp RBKT>;  // M обычно, RBKT (ъ) с Alt
-            mods = <(MOD_LALT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+        // J + M = ъ
+        combo_hard {
+            timeout-ms = <30>;
+            key-positions = <19 34>;  // J и M
+            bindings = <&kp RBKT>;
         };
         
-        // LALT + I → щ
-        altgr_i: altgr_i {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp I>, <&kp O>;  // I обычно, O (щ) с Alt
-            mods = <(MOD_LALT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+        // I + J = щ  
+        combo_shcha {
+            timeout-ms = <30>;
+            key-positions = <20 19>;  // I и J
+            bindings = <&kp APOS>;
         };
         
-        // RALT + T → ё
-        altgr_t: altgr_t {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp T>, <&kp GRAVE>;  // T обычно, GRAVE (ё) с Alt
-            mods = <(MOD_RALT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+        // J + K = э
+        combo_e {
+            timeout-ms = <30>;
+            key-positions = <19 21>;  // J и K
+            bindings = <&kp QUOT>;
         };
         
-        // LALT + J → э
-        altgr_j: altgr_j {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp J>, <&kp SQT>;  // J обычно, SQT (э) с Alt
-            mods = <(MOD_LALT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-    };
-    
-    // Переопределяем только нужные клавиши в слое 0
-    keymap {
-        compatible = "zmk,keymap";
-        
-        layer_0 {
-            bindings = 
-                // Заменяем только конкретные клавиши
-                // Позиция 5 (T) -> &altgr_t
-                // Позиция 8 (I) -> &altgr_i  
-                // Позиция 9 (P) -> &altgr_p
-                // Позиция 19 (J) -> &altgr_j
-                // Позиция 31 (M) -> &altgr_m
-                
-                // Полная раскладка с заменами:
-                &kp TAB    &kp Q      &kp W      &kp E      &kp R      &altgr_t            &kp Y      &kp U      &altgr_i   &kp O      &altgr_p   &kp BSPC
-                &kp LCTRL  &kp A      &kp S      &kp D      &kp F      &kp G               &kp H      &altgr_j   &kp K      &kp L      &kp SEMI   &kp SQT
-                &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B               &kp N      &altgr_m   &kp COMMA  &kp DOT    &kp FSLH   &kp ESC
-                                                  &kp LGUI   &mo 1      &kp SPACE           &kp RET    &mo 2      &kp RALT
-            >;
+        // T + Y = ё
+        combo_yo {
+            timeout-ms = <30>;
+            key-positions = <4 6>;  // T и Y
+            bindings = <&kp GRAVE>;
         };
     };
 };

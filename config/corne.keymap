@@ -9,44 +9,39 @@
     combos {
         compatible = "zmk,combos";
         
-        // LALT (S на позиции 14) + P = х
+        // LALT + P = х
         combo_ha {
             timeout-ms = <50>;
-            key-positions = <11 9>;
-            bindings = <&kp LBKT>;
-        };
-        combo_haa {
-            timeout-ms = <50>;
-            key-positions = <18 9>;
-            bindings = <&kp LBKT>;
+            key-positions = <14 10>;
+            bindings = <&kp LBKT>;  // [ - на ней х!
         };
         
-        // LALT (S на позиции 14) + M = ъ
+        // LALT + M = ъ
         combo_hard {
             timeout-ms = <50>;
             key-positions = <14 31>;
-            bindings = <&kp RBKT>;
+            bindings = <&kp RBKT>;  // ] - на ней ъ
         };
         
-        // LALT (S на позиции 14) + I = щ
+        // LALT + I = щ (НЕ ТРОГАЕМ - РАБОТАЕТ!)
         combo_shcha {
             timeout-ms = <50>;
             key-positions = <14 8>;
-            bindings = <&kp APOS>;
+            bindings = <&kp O>;  // O - на ней щ
         };
         
-        // LALT (S на позиции 14) + J = э
+        // LALT + J = э (РАБОТАЕТ!)
         combo_e {
             timeout-ms = <50>;
             key-positions = <14 19>;
-            bindings = <&kp QUOT>;
+            bindings = <&kp APOS>;  // ' - на ней э
         };
         
-        // RALT (L на позиции 21) + T = ё
+        // RALT + T = ё
         combo_yo {
             timeout-ms = <50>;
             key-positions = <21 4>;
-            bindings = <&kp GRAVE>;
+            bindings = <&kp BSLH>;  // \ - на ней ё!
         };
     };
 };

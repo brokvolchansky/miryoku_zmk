@@ -13,12 +13,12 @@
         combo_ha {
             timeout-ms = <50>;
             key-positions = <11 9>;
-            bindings = <&kp GRAVE>;
+            bindings = <&kp LBKT>;
         };
         combo_haa {
             timeout-ms = <50>;
             key-positions = <18 9>;
-            bindings = <&kp GRAVE>;
+            bindings = <&kp LBKT>;
         };
         
         // LALT (S на позиции 14) + M = ъ

@@ -5,44 +5,7 @@
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
 
-
 / {
-    macros {
-        // Макрос для х (Ctrl + з которая на P)
-        ctrl_p_kh: ctrl_p_kh {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(J)>;
-        };
-        
-        // Макрос для ъ (Ctrl + ь которая на M)
-        ctrl_m_hard: ctrl_m_hard {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(RBKT)>;
-        };
-        
-        // Макрос для щ (Ctrl + ш которая на I)
-        ctrl_i_shch: ctrl_i_shch {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(O)>;
-        };
-        
-        // Макрос для ё (Ctrl + е которая на T)
-        ctrl_t_yo: ctrl_t_yo {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(GRAVE)>;
-        };
-        
-        // Макрос для э (Ctrl + о которая на J)
-        ctrl_j_e: ctrl_j_e {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(SQT)>;
-        };
-    };
     
     combos {
         compatible = "zmk,combos";

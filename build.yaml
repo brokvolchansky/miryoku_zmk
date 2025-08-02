@@ -15,7 +15,11 @@
 include:
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view
+    clipboard: mac
+    nav: vi
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view
+    clipboard: mac
+    nav: vi
   - board: nice_nano_v2
     shield: settings_reset

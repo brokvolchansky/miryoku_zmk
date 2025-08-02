@@ -9,38 +9,38 @@
     combos {
         compatible = "zmk,combos";
         
-        // P + M = х (зажми одновременно)
+        // LALT (S на позиции 14) + P = х
         combo_ha {
-            timeout-ms = <30>;
-            key-positions = <9 34>;  // P и M
+            timeout-ms = <50>;
+            key-positions = <14 10>;
             bindings = <&kp GRAVE>;
         };
         
-        // J + M = ъ
+        // LALT (S на позиции 14) + M = ъ
         combo_hard {
-            timeout-ms = <30>;
-            key-positions = <19 34>;  // J и M
+            timeout-ms = <50>;
+            key-positions = <14 31>;
             bindings = <&kp RBKT>;
         };
         
-        // I + J = щ  
+        // LALT (S на позиции 14) + I = щ
         combo_shcha {
-            timeout-ms = <30>;
-            key-positions = <20 19>;  // I и J
+            timeout-ms = <50>;
+            key-positions = <14 8>;
             bindings = <&kp APOS>;
         };
         
-        // J + K = э
+        // LALT (S на позиции 14) + J = э
         combo_e {
-            timeout-ms = <30>;
-            key-positions = <19 21>;  // J и K
+            timeout-ms = <50>;
+            key-positions = <14 19>;
             bindings = <&kp QUOT>;
         };
         
-        // T + Y = ё
+        // RALT (L на позиции 21) + T = ё
         combo_yo {
-            timeout-ms = <30>;
-            key-positions = <4 6>;  // T и Y
+            timeout-ms = <50>;
+            key-positions = <21 4>;
             bindings = <&kp GRAVE>;
         };
     };

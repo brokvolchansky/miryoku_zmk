@@ -12,5 +12,5 @@ jobs:
       alphas: '["qwerty"]'
       extra: '["colemakdh"]'
       tap: '["qwerty"]'
-      nav: 'vi'
+      nav: '["vi"]'
       clipboard: '["mac"]'

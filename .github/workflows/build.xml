@@ -1,4 +1,4 @@
-name: Build Anton's ZMK firmware
+name: Build Anton ZMK firmware
 on: workflow_dispatch
 
 jobs:

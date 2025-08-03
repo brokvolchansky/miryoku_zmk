@@ -5,43 +5,4 @@
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        
-        // LALT + P = х
-        combo_ha {
-            timeout-ms = <50>;
-            key-positions = <21 9>;
-            bindings = <&kp LBKT>;  // [ - на ней х!
-        };
-        
-        // LALT + M = ъ
-        combo_hard {
-            timeout-ms = <50>;
-            key-positions = <14 31>;
-            bindings = <&kp RBKT>;  // ] - на ней ъ
-        };
-        
-        // LALT + I = щ (НЕ ТРОГАЕМ - РАБОТАЕТ!)
-        combo_shcha {
-            timeout-ms = <50>;
-            key-positions = <14 8>;
-            bindings = <&kp O>;  // O - на ней щ
-        };
-        
-        // LALT + J = э (РАБОТАЕТ!)
-        combo_e {
-            timeout-ms = <50>;
-            key-positions = <14 19>;
-            bindings = <&kp APOS>;  // ' - на ней э
-        };
-        
-        // RALT + T = ё
-        combo_yo {
-            timeout-ms = <50>;
-            key-positions = <21 4>;
-            bindings = <&kp BSLH>;  // \ - на ней ё!
-        };
-    };
-};
+

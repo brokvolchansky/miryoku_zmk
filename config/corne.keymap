@@ -5,4 +5,53 @@
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
 
-
+/ {
+    behaviors {
+        // Tap-dance for Q on BASE layer: single tap = Q, double tap = switch to RUS
+        td_q_base: tap_dance_q_base {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Q>, <&to U_RUS>;
+        };
+        
+        // Tap-dance for Q on RUS layer: single tap = Q, double tap = switch to BASE
+        td_q_rus: tap_dance_q_rus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Q>, <&to U_BASE>;
+        };
+        
+        // Hold-tap for soft sign -> hard sign (ь -> ъ)
+        rus_soft_hard: rus_soft_hard {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        
+        // Hold-tap for O -> E with apostrophe (э)
+        rus_o_e: rus_o_e {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        
+        // Hold-tap for E -> YO (ё)
+        rus_e_yo: rus_e_yo {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+    
+};

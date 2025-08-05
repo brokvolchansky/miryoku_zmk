@@ -6,40 +6,69 @@
 #include "../miryoku/miryoku.dtsi"
 
 / {
+    macros {
+        // Macro for Ё (double grave to bypass dead key)
+        yo_macro: yo_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp GRAVE>, <&kp GRAVE>;
+        };
+        
+        // Macro: switch to RUS layer + F19 for Russian layout (via Karabiner)
+        to_rus_with_lang: to_rus_with_lang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&to U_RUS>, <&kp F19>;
+        };
+        
+        // Macro: switch to BASE layer + F18 for English layout (via Karabiner)
+        to_base_with_lang: to_base_with_lang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&to U_BASE>, <&kp F18>;
+        };
+    };
+    
     behaviors {
-        // Tap-dance for Q on BASE layer: single tap = Q, double tap = switch to RUS
+        // Tap-dance for Q on BASE layer: single tap = Q, double tap = switch to RUS + Globe
         td_q_base: tap_dance_q_base {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp Q>, <&to U_RUS>;
+            bindings = <&kp Q>, <&to_rus_with_lang>;
         };
         
-        // Tap-dance for Q on RUS layer: single tap = Q, double tap = switch to BASE
+        // Tap-dance for Q on RUS layer: single tap = Q, double tap = switch to BASE + Globe
         td_q_rus: tap_dance_q_rus {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp Q>, <&to U_BASE>;
+            bindings = <&kp Q>, <&to_base_with_lang>;
         };
         
         // Hold-tap for soft sign -> hard sign (ь -> ъ)
         rus_soft_hard: rus_soft_hard {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
         
-        // Hold-tap for O -> E with apostrophe (э)
-        rus_o_e: rus_o_e {
+        // Hold-tap for H -> E with apostrophe (э)
+        rus_h_e: rus_h_e {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
         
@@ -47,9 +76,9 @@
         rus_e_yo: rus_e_yo {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
     };

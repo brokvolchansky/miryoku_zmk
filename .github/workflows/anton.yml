@@ -14,3 +14,4 @@ jobs:
       tap: '["qwerty"]'
       nav: '["vi"]'
       clipboard: '["mac"]'
+      modules: '["M165437/nice-view-gem/main"]'

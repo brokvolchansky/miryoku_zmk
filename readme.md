@@ -15,7 +15,7 @@ See the [[docs/quickstart][Miryoku ZMK Quickstart Guide]] to have a personalised
 is a clone of the Miryoku repository customized for Chocofi keyboard by [Beekeeb Chocofi](https://shop.beekeeb.com/product/chocofi-36-keys-kailh-low-profile-choc-v1-mechanical-ergonomic-hotswap-split-keyboard-diy-kit/).
 It can be built locally as well as with help of github actions.
 
-The differences in the default settings I use are: 
+### The differences in the default settings I use are: 
 - the [layout](.github/workflows/anton.yml) changed to QWERTY;
 - added Russian layer with helpers for Karabiner;
 - added possibility to build it locally;
@@ -23,4 +23,7 @@ The differences in the default settings I use are:
 
 Some [settings](config/corne.keymap) for russian layer you could find a bit weird — you are free to change them as you wish in your clone.
 
+Also, see [instructions](https://github.com/manna-harbour/miryoku/discussions/71#discussioncomment-2108278) of how to change layer presentation you can find in the layout directory of the repo.
+
 I appreciate [guys from Beekeeb.com](https://shop.beekeeb.com/contact/), [Manna Houbre](https://github.com/manna-harbour/manna-harbour/tree/main/contact) and [M165437](https://github.com/M165437) who did a lot of work to let me type this device with pleasure!
+

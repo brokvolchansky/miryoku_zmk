@@ -4,7 +4,11 @@
 # IntelliJ project files
 .idea
 build
-./CLAUDE.md
 .claude
 .DS_Store
 miryoku/.DS_Store
+.west
+/modules/
+zephyr/
+zmk/
+CLAUDE.md

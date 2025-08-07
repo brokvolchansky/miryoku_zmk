@@ -7,13 +7,22 @@
 
 / {
     macros {
-        // Macro for Ё (double grave to bypass dead key)
-        yo_macro: yo_macro {
+        // Macro for ё: send F16 (will be converted to ё by Karabiner)
+        yo_lowercase: yo_lowercase {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&kp GRAVE>, <&kp GRAVE>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp F16>;
+        };
+        
+        // Macro for Ё: send F17 (will be converted to Ё by Karabiner)
+        yo_uppercase: yo_uppercase {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp F17>;
         };
         
         // Macro: switch to RUS layer + F19 for Russian layout (via Karabiner)
@@ -36,7 +45,7 @@
     };
     
     behaviors {
-        // Tap-dance for Q on BASE layer: single tap = Q, double tap = switch to RUS + Globe
+// Tap-dance for Q on BASE layer: single tap = Q, double tap = switch to RUS + Globe
         td_q_base: tap_dance_q_base {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -72,15 +81,24 @@
             bindings = <&kp>, <&kp>;
         };
         
-        // Hold-tap for E -> YO (ё)
-        rus_e_yo: rus_e_yo {
+        // Mod-morph for R -> ё/Ё (F16 without shift, F17 with shift)
+        rus_yo_morph: rus_yo_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&yo_lowercase>, <&yo_uppercase>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        // Hold-tap for R -> ё on hold  
+        rus_r_yo: rus_r_yo {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&yo_macro>, <&kp>;
+            flavor = "hold-preferred";
+            bindings = <&rus_yo_morph>, <&kp>;
         };
+        
     };
     
 };

@@ -23,6 +23,26 @@ cat > ~/.config/karabiner/assets/complex_modifications/direct_en_ru.json <<'EOF'
           "to": [ { "select_input_source": { "language": "^ru$" } } ]
         }
       ]
+    },
+    {
+      "description": "F16 → ё (lowercase)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "f16", "modifiers": { "optional": ["any"] } },
+          "to": [ { "key_code": "backslash" } ]
+        }
+      ]
+    },
+    {
+      "description": "F17 → Ё (uppercase)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "f17", "modifiers": { "optional": ["any"] } },
+          "to": [ { "key_code": "backslash", "modifiers": ["shift"] } ]
+        }
+      ]
     }
   ]
 }

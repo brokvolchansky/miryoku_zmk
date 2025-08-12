@@ -99,6 +99,16 @@
             bindings = <&rus_yo_morph>, <&kp>;
         };
         
+        // Hold-tap for P -> х (h) on hold
+        rus_p_h: rus_p_h {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        
     };
     
 };

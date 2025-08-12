@@ -45,7 +45,7 @@
     };
     
     behaviors {
-// Tap-dance for Q on BASE layer: single tap = Q, double tap = switch to RUS + Globe
+        // Tap-dance for Q on BASE layer: single tap = Q, double tap = switch to RUS + Globe
         td_q_base: tap_dance_q_base {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
